@@ -33,7 +33,7 @@ print(df2.show())
 df3 = spark.sql('''
                     select
                         date_trunc('day', pickup_datetime) as current_day,
-                        max(dropOff_datetime-pickup_datetime)
+                        max(dropOff_datetime-pickup_datetime) as duration
                     from sqlquery
                     group by 1;
                 ''')
